@@ -8,42 +8,25 @@
  set nocompatible               " be iMproved
  filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+ set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
 
  " let Vundle manage Vundle
  " required!
- Bundle 'gmarik/vundle'
+ Plugin 'VundleVim/Vundle.vim'
 
  " My Bundles here:
  "
  " original repos on github
- Bundle 'crooloose/syntastic'
- Bundle 'Valloric/YouCompleteMe'
- Bundle 'kien/ctrlp.vim'
- Bundle 'bogado/file-line'
- Bundle 'scrooloose/nerdcommenter'
- Bundle 'scrooloose/nerdtree'
- Bundle 'klen/python-mode'
- Bundle 'godlygeek/tabular'
- Bundle 'majutsushi/tagbar'
- Bundle 'ehamberg/vim-cute-python'
- Bundle 'mhinz/vim-signify'
- Bundle 'mhinz/vim-startify'
- Bundle 'jnwhiteh/vim-golang'
- Bundle 'kchmck/vim-coffee-script'
- Bundle 'bling/vim-airline'
- " vim-scripts repos
- Bundle 'L9'
- Bundle 'compview'
- Bundle 'Gundo'
- Bundle 'pep8'
- Bundle 'bufkill.vim'
- " non github repos
- "Bundle 'git://git.wincent.com/command-t.git'
- " ...
+ Plugin 'scrooloose/syntastic'
+ Plugin 'scrooloose/nerdcommenter'
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'klen/python-mode'
+ Plugin 'majutsushi/tagbar'
+ Plugin 'ehamberg/vim-cute-python'
 
- filetype plugin indent on     " required!
+ call vundle#end()            " required
+ filetype plugin indent on    " required
  "
  " Brief help
  " :BundleList          - list configured bundles
@@ -169,9 +152,6 @@
     " <SHIFT + t> - trim white spaces in lines end
     map <s-t> :%s/ \+$//g<CR>
 
-    " Runs Unit tests
-    nmap <F8> :python RunUnitTestsUnderCursor()<CR>
-
     " Toggles non printable character visibility
     nmap <silent> <leader>w :set nolist!<CR>
 
@@ -191,15 +171,6 @@
 
     " No autoindent in paste mode
     set pastetoggle=<F2>
-
-    " PEP8 Check
-    let g:pep8_map='<F3>'
-
-    " Gundo toggle
-    nnoremap <F4> :GundoToggle<CR>
-
-    " CompView
-    map <leader>f :CompView<CR>
 
     " Clean search highlight on space
     nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -260,9 +231,6 @@
     " Window rotate
     map <leader>wr <C-W>r
 
-    " Tabularize shortcut
-    vmap <leader>t :Tabularize /
-
     " Alias to ^w
     nmap <C-q> <C-w>
 
@@ -320,26 +288,6 @@
 
 " }}}
 " Plugin Settings ======================================================== {{{
-    " AirLine ------------------------------------------------------------ {{{
-        let g:airline_powerline_fonts = 1
-        let g:airline#extensions#tabline#enabled = 1
-        let g:airline_detect_iminsert= 1
-        let g:airline_theme = 'dark'
-    " }}}
-    " Mini Buff Explorer ------------------------------------------------- {{{
-
-        let g:miniBufExplMapWindowNavVim = 1
-        let g:miniBufExplMapWindowNavArrows = 1
-        let g:miniBufExplMapCTabSwitchBufs = 1
-        let g:miniBufExplModSelTarget = 1
-
-    " }}}
-    " Gundo -------------------------------------------------------------- {{{
-
-        let g:gundo_preview_bottom = 1
-        let g:gundo_width = 30
-
-    " }}}
     " NerdTree ----------------------------------------------------------- {{{
 
         let NERDTreeMinimalUI=1
@@ -347,26 +295,7 @@
         let NERDTreeIgnore=['\.pyc$', '\.bak$', '\.swp$']
 
     " }}}
-    " startify ----------------------------------------------------------- {{{
-        let g:startify_session_dir = '~/.vim/session'
-        let g:startify_bookmarks = [ '~/.vim/vimrc', '~/.zshrc' ]
-    " }}}
 " Custom functions ======================================================= {{{
-
-    function! HgCiDiff()
-        "In .hgrc editor option I call vim "+HgCiDiff()"
-        "It opens new split with diff inside
-        rightbelow  vnew
-        setlocal buftype=nofile
-        :.!hg diff
-        setlocal ft=diff
-        wincmd p
-        setlocal spell spelllang=en_us
-        cnoremap wq wqa
-        cnoremap q qa
-        start
-    endfunction
-
     function! WinMove(key)
       " Helps moving arround windows
       let t:curwin = winnr()
