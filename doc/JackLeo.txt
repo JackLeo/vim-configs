@@ -1,0 +1,296 @@
+*JackLeo*                                       My personal Vim Configuration
+
+
+
+                              Reference Manual~
+
+
+
+
+==============================================================================
+CONTENTS                                                    *JackLeo-Contents*
+
+    1.Intro...................................|JackLeo-Intro|
+        1.1.Requirements......................|JackLeo-Requirements|
+        1.2.Install...........................|JackLeo-Install|
+    2.Config..................................|JackLeo-Config|
+    3.Plugins.................................|JackLeo-Plugins|
+        3.1.CompView..........................|JackLeo-CompView|
+        3.2.NERDcommenter.....................|JackLeo-NERDcommenter|
+        3.3.Pyflakes-Vim......................|JackLeo-Pyflakes-Vim|
+        3.4.SnipMate..........................|JackLeo-SnipMate|
+        3.5.TabBar............................|JackLeo-TabBar|
+        3.6.DrawIt............................|Jackleo-DrawIt|
+        3.7.NERDtree..........................|JackLeo-NERDtree|
+        3.8.PyTest............................|JackLeo-PyTest|
+        3.9.SuperTab..........................|JackLeo-SuperTab|
+        3.10.TaskList.........................|JackLeo-TaskList|
+        3.11.Gundo............................|JackLeo-Gundo|
+        3.12.PEP8.............................|JackLeo-PEP8|
+        3.13.Syntastic........................|JackLeo-Syntastic|
+        3.14.VCSCommand.......................|JackLeo-VCSCommand|
+    4.Custom functions........................|JackLeo-Functions|
+        4.1.HgCiDiff..........................|Jackleo-HgCiDiff|
+    5.About...................................|JackLeo-About|
+    6.Changelog...............................|JackLeo-Changelog|
+    7.Credits.................................|JackLeo-Credits|
+    8.License.................................|JackLeo-License|
+
+
+==============================================================================
+1. Intro                                                       *JackLeo-Intro*
+
+This is my personal configuration helper in case I would forget something or
+someone would be interested of learning something from other people configs.
+
+For copying, forking and anything else please read |JackLeo-License|.
+
+For more stuff about this please read |JackLeo-About|.
+
+------------------------------------------------------------------------------
+1.1 Requirements                                        *JackLeo-Requirements*
+
+For installation you need mercurial to clone this configuration
+and git to clone all subrepos that are added.
+
+For PEP8 plugin you need PEP8 packet that is available at:
+    - http://pypi.python.org/pypi/pep8/
+
+For Pyflakes plugin you need Pyflakes packet that is available at:
+    - http://pypi.python.org/pypi/pyflakes/
+
+
+------------------------------------------------------------------------------
+1.2 Install                                                  *JackLeo-Install*
+
+Firstly remove .vim folder from your home directory, then clone my vim config
+to your $HOME/.vim
+
+    $ cd ~
+    $ rm .vim -r
+    $ hg clone https://bitbucket.org/JackLeo/vim-configs .vim
+
+then inside your .vimrc file ($HOME/.vimrc) add first line as:
+
+    so $HOME/.vim/vimrc
+
+In this case you can overwrite any settings in your .vimrc file
+by adding settings after this line.
+
+If you wish to add extra plugins just put those to $HOME/.vim/bundle directory
+For samples just go to that directory and look at other plugins.
+
+
+==============================================================================
+2. Config                                                     *JackLeo-Config*
+
+TODO
+
+
+==============================================================================
+3. Plugins                                                   *JackLeo-Plugins*
+------------------------------------------------------------------------------
+3.1.CompView                                                *JackLeo-CompView*
+
+CompView generates a list of matches and displays a window
+with all the matching lines. By default you can callit with <leader>f
+
+ - http://www.vim.org/scripts/script.php?script_id=1803
+
+------------------------------------------------------------------------------
+3.2.NERDcommenter                                      *JackLeo-NERDcommenter*
+
+NERDcommenter helps to comment out or toggle comments.
+No configuration is done, so more at |NERDCommenter|
+
+ - http://www.vim.org/scripts/script.php?script_id=1218
+
+------------------------------------------------------------------------------
+3.3.Pyflakes-Vim                                        *JackLeo-Pyflakes-Vim*
+
+Pyflakes Vim plugin checks for syntax errors in python code
+and marks errors in red. Autofix is turned off.
+
+ - http://www.vim.org/scripts/script.php?script_id=2441
+
+------------------------------------------------------------------------------
+3.4.SnipMate                                                *JackLeo-SnipMate*
+
+SnipMate does block completition for code. For more look at |snipMate|
+
+ - http://www.vim.org/scripts/script.php?script_id=2540
+
+------------------------------------------------------------------------------
+3.5.TabBar                                                    *JackLeo-TabBar*
+
+TabBar shows opened tabs in the new top split.
+You can move to that window as navigating in Vim splits.
+Inside Tab changes the buffer and enter opens it. Mouse is supported.
+
+ - http://www.vim.org/scripts/script.php?script_id=1338
+
+------------------------------------------------------------------------------
+3.6.DrawIt                                                    *JackLeo-DrawIt*
+
+DrawIt is a plugin which allows one to draw lines, boxes or other ASCII stuff.
+More in |drawit.txt|
+
+ - http://www.vim.org/scripts/script.php?script_id=40
+
+------------------------------------------------------------------------------
+3.7.NERDtree                                                *JackLeo-NERDtree*
+
+Provides A Tree like browser for filesystem. To launch it just hit <leader>n
+
+For more look at |NERDtree|
+
+ - http://www.vim.org/scripts/script.php?script_id=1658
+
+------------------------------------------------------------------------------
+3.8.PyTest                                                    *JackLeo-PyTest*
+
+PyTest helps to run test within Vim. For more look at |pytest.txt|
+
+ - http://www.vim.org/scripts/script.php?script_id=3424
+
+------------------------------------------------------------------------------
+3.9.SuperTab                                                *JackLeo-SuperTab*
+
+SuperTab autocompletes after Tab is pressed inside insert mode.
+More in |supertab|.
+
+ - http://www.vim.org/scripts/script.php?script_id=1643
+
+------------------------------------------------------------------------------
+3.10.TaskList                                               *JackLeo-TaskList*
+
+TaskList seaches for FIXME, TODO, XXX (there is an option to add more).
+Launched with <leader>t
+
+ - http://www.vim.org/scripts/script.php?script_id=2607
+
+------------------------------------------------------------------------------
+3.11.Gundo                                                     *JackLeo-Gundo*
+
+Gundo visualize undo tree. Toggable as NERDtree with <F4>. More at |gundo.txt|
+
+ - http://www.vim.org/scripts/script.php?script_id=3304
+
+------------------------------------------------------------------------------
+3.12.PEP8                                                       *JackLeo-PEP8*
+
+PEP8 cheks how python code is formed and gives suggestions based on PEP8.
+
+My key mapping to launch it is <F3>.
+
+ - http://www.vim.org/scripts/script.php?script_id=2914
+
+------------------------------------------------------------------------------
+3.13.Syntastic                                             *JackLeo-Syntastic*
+
+Syntastic gives syntax checking in other Programming Languages than Python.
+Python is leaved alone for pyflakes.
+
+ - http://www.vim.org/scripts/script.php?script_id=2736
+
+------------------------------------------------------------------------------
+3.14.VCSCommand                                           *JackLeo-VCSCommand*
+
+CVS/SVN/SVK/git/hg/bzr integration plugin, more at |vcscommand.txt|
+
+ - http://www.vim.org/scripts/script.php?script_id=90
+
+==============================================================================
+4. Custom functions                                        *JackLeo-Functions*
+------------------------------------------------------------------------------
+4.1 HgCiDiff                                              *JackLeo-HgCiDiff()*
+
+This is custom function that is meant to be called upon mercurial commit.
+Inside mercurial configuration file there is an option - editor, that accepts
+command to launch editor when committing [vim "+HgCiDiff()"].
+
+This function:
+    * Opens Vim
+    * Does vertical split with new buffer
+    * Marks new buffer as scratch (nofile)
+    * In that empty buffer prints commit diff
+    * Moves cursor to commit message window
+    * Maps :wq as :wqa
+    * Maps :q as :qa
+
+
+==============================================================================
+5. About                                                       *JackLeo-About*
+
+Hi I'm a Vim lover, geek and OpenSource fan. For more info you may visit my
++Google profile:
+    https://plus.google.com/108376953135167752994
+
+Or my Blog:
+    http://JackLeo.info
+
+The latest version of this configuration is available here:
+    http://hg.jackleo.info/vim-configs/
+
+Also you might be interested in my home configs that are available at:
+    http://hg.jackleo.info/home-configs/
+
+If you found any misstakes in my config please fill an issue at bitbucket:
+    http://hg.jackleo.info/vim-configs/issues
+
+
+==============================================================================
+6. Changelog                                               *JackLeo-Changelog*
+
+2011-11-06
+    - Initial commit.
+
+2011-11-08
+    - Finished documenting plugins and removed searchFold.
+
+
+==============================================================================
+7. Credits                                                   *JackLeo-Credits*
+
+Thanks to everyone who helped to build and shape my configuration file:
+
+    * ReekenX <http://jarmalavičius.lt>
+            for base config structure, pathogen plugin
+            and passion to Vim and Vim personification.
+            - https://github.com/ReekenX/ubuntu-home-configs/
+
+    * Sirex <http://sirex.lt>
+            for inspiring to take on Python and recommending some plugins
+
+    * Petaszd <http://petraszd.com>
+            for love to NERD series plugins and good sense of humor
+
+    * Netas3k <Netas3k@feenode (IRC)>
+            for curiosity and asking a lot of questions
+            that moves me to look a bit deeper to the same problems
+
+    * Randy Morris <http://stackoverflow.com/users/155299/>
+            for commenting and helping to finish |JackLeo-HgCiDiff()|
+            - http://stackoverflow.com/questions/8009333/
+
+    * Paulo Da Silva <http://stackoverflow.com/users/1015110/>
+            for answering my question and helping to move .vimrc to .vim/vimrc
+            - http://stackoverflow.com/questions/7906379/
+
+    * Zarick Lau <http://stackoverflow.com/users/297054/>
+            for answering my question and
+            making my cursor line green in insert mode
+            - http://stackoverflow.com/questions/7614546/
+
+
+==============================================================================
+8. License                                                   *JackLeo-License*
+
+JackLeo configuration of Vim is released under the wtfpl.
+See http://sam.zoy.org/wtfpl/COPYING.
+
+For plugins see the licenses in bundle directory
+or in helpfiles they are shipped with.
+
+There are no modifications (with an exception of provided configuration)
+for plugins in respect to they natural functionality.
