@@ -1,8 +1,3 @@
-"+----------------------------------------------------------------------------+
-"| Author: Domantas Jackūnas <me@jackleo.info>                                |
-"| Source: http://hg.jackleo.info/vim-configs/src                             |
-"+----------------------------------------------------------------------------+
-
 " Load vundle and plugins ============================================== {{{
 
  set nocompatible               " be iMproved
